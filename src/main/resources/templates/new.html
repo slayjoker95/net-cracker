@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create new laptop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div>
+    <h1>New laptop:</h1>
+</div>
+<div>
+    <form action="#" th:action="@{/laptops/new}" th:object="${laptop}" method="post">
+        <p><label class="labels">ID:</label><input type="text" th:field="*{id}"/></p>
+        <p><label class="labels">Model:</label><input type="text" th:field="*{model}"/></p>
+        <p><label class="labels">Price:</label><input type="text" th:field="*{price}"/></p>
+        <p><label class="labels">Color:</label><input type="text" th:field="*{color}"/></p>
+        <p><input type="submit" value="Add"/></p>
+    </form>
+</div>
+
+<div>
+    <a href="/laptops/">Back to laptops list</a>
+</div>
+
+</body>
+</html>

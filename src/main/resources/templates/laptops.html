@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Products</title>
+    <title>Laptops</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+   	<link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-<div class="containerProducts">
+<div>
 		<div class="row">
 			<h1>Laptops</h1>
 		</div>
@@ -18,7 +18,8 @@
 					<th>Price</th>
 					<th>Color</th>
 				</tr>
- 				
+
+
 				<tr th:each="l : ${lll}" >
 					<td th:text="${l.id}"></td>
 					<td th:text="${l.model}"></td>
@@ -28,6 +29,17 @@
 
 			</table>
 		</div>
+
+	<div>
+		<form action="#"  th:object="${laptopForSearch}" th:action="@{/laptops/{path}(path = *)}" method="GET">
+			<p><label class="labels">ID:</label><input type="text" th:field="*"/></p>
+			<p><input type="submit" value="Find" /></p>
+		</form>
+	</div>
+
+	<div>
+		<a href="/laptops/new.html">Add new laptop</a>
+	</div>
 </div>
 </body>
 </html>

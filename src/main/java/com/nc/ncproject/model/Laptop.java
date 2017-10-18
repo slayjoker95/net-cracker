@@ -37,6 +37,9 @@ public class Laptop {
         this.price = price;
         this.color = color;
     }
+    public Laptop(){
+
+    }
 
     public Long getId() {
         return id;

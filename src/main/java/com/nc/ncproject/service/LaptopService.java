@@ -24,4 +24,11 @@ public class LaptopService {
     public List<Laptop> findAll() {
         return laptops;
     }
+
+    public Laptop getByID(String id){
+        for (Laptop l:laptops) {
+            if(Long.parseLong(id)== l.getId()) return l;
+        }
+        return null;
+    }
 }
