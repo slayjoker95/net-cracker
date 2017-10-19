@@ -31,14 +31,14 @@
 		</div>
 
 	<div>
-		<form action="#"  th:action="@{/laptops/__${id}__}" method="GET">
-			<p><label class="labels">Search by ID:</label><input type="text" th:value="__${id}__"/></p>
+		<form action="#"  th:action="@{/laptops/search}" th:object="${laptopForSearch}" method="POST">
+			<p><label class="labels">Search by ID:</label><input type="text" th:field="*{id}"/></p>
 			<p><input type="submit" value="Find" /></p>
 		</form>
 	</div>
 
 	<div>
-		<a href="/laptops/new.html">Add new laptop</a>
+		<a th:href="@{/laptops/new}">Add new laptop</a>
 	</div>
 </div>
 </body>
