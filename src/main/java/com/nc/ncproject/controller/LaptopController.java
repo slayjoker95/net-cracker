@@ -22,27 +22,29 @@ public class LaptopController {
         List<Laptop> laptops = laptopService.findAll();
         modelAndView.addObject("lll", laptops);
 
-        
         Laptop laptopForSearch = new Laptop();
         modelAndView.addObject("laptopForSearch", laptopForSearch);
         return modelAndView;
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public ModelAndView searchByObject(@ModelAttribute Laptop laptopForSearch, Model model) {
-        ModelAndView modelAndView = new ModelAndView("search");
-        Laptop laptop = laptopService.getByID(laptopForSearch.getId().toString());
+    private ModelAndView createMV(Laptop laptop){
+        ModelAndView modelAndView;
+        if (laptop == null)
+        {
+            modelAndView = new ModelAndView("unsuccessfulSearch");
+        }
+        else modelAndView = new ModelAndView("search");
         modelAndView.addObject("lll", laptop);
         return modelAndView;
+    }
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public ModelAndView searchByObject(@ModelAttribute Laptop laptopForSearch, Model model) {
+        return createMV(laptopService.getByID(laptopForSearch.getId().toString()));
     }    
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView searchById(@PathVariable String id) {
-
-        ModelAndView modelAndView = new ModelAndView("search");
-        Laptop laptop = laptopService.getByID(id);
-        modelAndView.addObject("lll", laptop);
-        return modelAndView;
+        return createMV(laptopService.getByID(id));
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

@@ -6,6 +6,27 @@
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
+<div>
+    <h1>Details</h1>
+</div>
+<div>
+    <p><label class="labels">ID:</label>
+        <output type="text" th:text="${lll.id}"/>
+    </p>
+    <p><label class="labels">Model:</label>
+        <output type="text" th:text="${lll.model}"/>
+    </p>
+    <p><label class="labels">Price:</label>
+        <output type="text" th:text="${lll.price}"/>
+    </p>
+    <p><label class="labels">Color:</label>
+        <output type="text" th:text="${lll.color}"/>
+    </p>
+</div>
+
+<div>
+    <a th:href="@{/laptops/}">Back to laptops list</a>
+</div>
 
 </body>
 </html>
