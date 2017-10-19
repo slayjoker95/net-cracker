@@ -31,8 +31,8 @@
 		</div>
 
 	<div>
-		<form action="#"  th:object="${laptopForSearch}" th:action="@{/laptops/{path}(path = *)}" method="GET">
-			<p><label class="labels">ID:</label><input type="text" th:field="*"/></p>
+		<form action="#"  th:action="@{/laptops/__${id}__}" method="GET">
+			<p><label class="labels">Search by ID:</label><input type="text" th:value="__${id}__"/></p>
 			<p><input type="submit" value="Find" /></p>
 		</form>
 	</div>
