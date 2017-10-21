@@ -60,4 +60,22 @@ public class LaptopController {
         return "redirect:/laptops/";
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete (@PathVariable String id){
+        laptopService.delete(id);
+        return new ModelAndView("redirect:/laptops/");
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public ModelAndView update (@PathVariable String id) {
+        ModelAndView modelAndView = new ModelAndView("update");
+        modelAndView.addObject("laptop", laptopService.getByID(id));
+        return modelAndView;
+    }
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public String update(Laptop updateLaptop){
+        laptopService.update(updateLaptop);
+        return "redirect:/laptops/";
+    }
+
 }

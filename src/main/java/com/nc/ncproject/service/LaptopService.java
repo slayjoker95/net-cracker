@@ -31,4 +31,22 @@ public class LaptopService {
         }
         return null;
     }
+
+    public void delete (String id){
+        for (Laptop l:laptops){
+            if (Long.parseLong(id)==l.getId())
+                laptops.remove(l);
+        }
+    }
+
+    public void update (Laptop laptop){
+        for (Laptop l:laptops) {
+            if (laptop.getId() == l.getId()) {
+                l.setColor(laptop.getColor());
+                l.setId(laptop.getId());
+                l.setModel(laptop.getModel());
+                l.setPrice(laptop.getPrice());
+            }
+        }
+    }
 }

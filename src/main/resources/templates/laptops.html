@@ -17,6 +17,8 @@
 					<th>Model</th>
 					<th>Price</th>
 					<th>Color</th>
+                    <th>Delete</th>
+					<th>Update</th>
 				</tr>
 
 
@@ -25,6 +27,12 @@
 					<td th:text="${l.model}"></td>
 					<td th:text="${l.price}"></td>
 					<td th:text="${l.color}"></td>
+                    <td>
+						<a th:href="@{/laptops/delete/{id}(id=${l.id})}">delete</a>
+                    </td>
+					<td>
+						<a th:href="@{/laptops/update/{id}(id=${l.id})}">update</a>
+					</td>
 				</tr>
 
 			</table>
