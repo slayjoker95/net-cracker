@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class LaptopService {
-    private List<Laptop> laptops;
+    private CopyOnWriteArrayList<Laptop> laptops;
 
     @PostConstruct
     public void init(){
@@ -23,7 +23,7 @@ public class LaptopService {
         laptops.add(new Laptop(Long.valueOf(5L), "DELL", Long.valueOf(16000L), "Black"));
     }
 
-    public List<Laptop> findAll() {
+    public CopyOnWriteArrayList<Laptop> findAll() {
         return laptops;
     }
 
