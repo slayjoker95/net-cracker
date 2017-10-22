@@ -43,13 +43,14 @@ public class LaptopService {
     }
 
     public void update (Laptop laptop){
+        Laptop lap = new Laptop();
         for (Laptop l:laptops) {
-            if (laptop.getId() == l.getId()) {
-                l.setColor(laptop.getColor());
-                l.setId(laptop.getId());
-                l.setModel(laptop.getModel());
-                l.setPrice(laptop.getPrice());
-            }
+            if (laptop.getId() == l.getId())
+                lap=l;
         }
+        lap.setColor(laptop.getColor());
+        lap.setId(laptop.getId());
+        lap.setModel(laptop.getModel());
+        lap.setPrice(laptop.getPrice());
     }
 }
