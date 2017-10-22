@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class LaptopService {
@@ -14,7 +15,7 @@ public class LaptopService {
 
     @PostConstruct
     public void init(){
-        laptops = new ArrayList<Laptop>();
+        laptops = new CopyOnWriteArrayList<Laptop>();
         laptops.add(new Laptop(Long.valueOf(1L), "ASUS", Long.valueOf(18000L), "Black"));
         laptops.add(new Laptop(Long.valueOf(2L), "Acer", Long.valueOf(19000L), "White"));
         laptops.add(new Laptop(Long.valueOf(3L), "Lenovo", Long.valueOf(17000L), "Black"));
@@ -34,23 +35,20 @@ public class LaptopService {
     }
 
     public void delete (String id){
-        Laptop laptop = new Laptop();
         for (Laptop l:laptops){
             if (Long.parseLong(id)==l.getId())
-                laptop = l;
+                laptops.remove(l);
         }
-        laptops.remove(laptop);
     }
 
     public void update (Laptop laptop){
-        Laptop lap = new Laptop();
         for (Laptop l:laptops) {
-            if (laptop.getId() == l.getId())
-                lap=l;
+            if (laptop.getId() == l.getId()) {
+                l.setColor(laptop.getColor());
+                l.setId(laptop.getId());
+                l.setModel(laptop.getModel());
+                l.setPrice(laptop.getPrice());
+            }
         }
-        lap.setColor(laptop.getColor());
-        lap.setId(laptop.getId());
-        lap.setModel(laptop.getModel());
-        lap.setPrice(laptop.getPrice());
     }
 }
