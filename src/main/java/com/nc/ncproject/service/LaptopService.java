@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -33,10 +34,12 @@ public class LaptopService {
     }
 
     public void delete (String id){
+        Laptop laptop = new Laptop();
         for (Laptop l:laptops){
             if (Long.parseLong(id)==l.getId())
-                laptops.remove(l);
+                laptop = l;
         }
+        laptops.remove(laptop);
     }
 
     public void update (Laptop laptop){
