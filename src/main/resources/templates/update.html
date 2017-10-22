@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Create new laptop</title>
+    <title>Update laptop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
 <div>
-    <h1>New laptop:</h1>
+    <h1>Update laptop:</h1>
 </div>
 <div>
     <form action="#" th:action="@{/laptops/update/{id}}" th:object="${laptop}" method="post">
