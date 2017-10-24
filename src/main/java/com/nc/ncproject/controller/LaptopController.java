@@ -17,7 +17,7 @@ public class LaptopController {
     private LaptopsRepository laptopsRepository;
 
     @GetMapping(path="/")
-    public @ResponseBody Iterable<Laptop> getAllUsers() {
+    public @ResponseBody Iterable<Laptop> getAllLaptops() {
         // This returns a JSON or XML with the users
         return laptopsRepository.findAll();
     }

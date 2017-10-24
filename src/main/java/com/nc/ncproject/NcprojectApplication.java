@@ -25,7 +25,7 @@ public class NcprojectApplication {
 
 		// fetch all laptops
 		Iterable<Laptop> laptops = repository.findAll();
-		System.out.println("Customers found with findAll():");
+		System.out.println("Laptops found with findAll():");
 		System.out.println("-------------------------------");
 		for (Laptop laptop : laptops) {
 			System.out.println(laptop);

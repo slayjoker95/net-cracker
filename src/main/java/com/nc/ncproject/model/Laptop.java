@@ -49,7 +49,7 @@ public class Laptop {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, model='%s', price=%d, color='%s']",
+                "Laptop[id=%d, model='%s', price=%d, color='%s']",
                 id, model, price, color);
     }
 
