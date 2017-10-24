@@ -1,12 +1,10 @@
 package com.nc.ncproject;
 
 import com.nc.ncproject.model.Laptop;
-import com.nc.ncproject.Repository.LaptopsRepository;
-import org.springframework.boot.CommandLineRunner;
+import com.nc.ncproject.repository.LaptopsRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

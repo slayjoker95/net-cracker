@@ -1,4 +1,4 @@
-package com.nc.ncproject.Repository;
+package com.nc.ncproject.repository;
 
 import com.nc.ncproject.model.Laptop;
 import org.springframework.data.repository.CrudRepository;
