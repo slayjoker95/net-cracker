@@ -1,6 +1,14 @@
 package com.nc.ncproject.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Laptop {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String model;
     private Long price;
@@ -30,16 +38,21 @@ public class Laptop {
         this.color = color;
     }
 
-    public Laptop(Long id, String model, Long price, String color) {
-
-        this.id = id;
+    public Laptop(String model, Long price, String color) {
         this.model = model;
         this.price = price;
         this.color = color;
     }
-    public Laptop(){
+    protected Laptop(){
 
     }
+    @Override
+    public String toString() {
+        return String.format(
+                "Customer[id=%d, model='%s', price=%d, color='%s']",
+                id, model, price, color);
+    }
+
 
     public Long getId() {
         return id;
@@ -48,5 +61,6 @@ public class Laptop {
     public void setId(Long id) {
         this.id = id;
     }
+
 
 }
