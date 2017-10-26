@@ -24,7 +24,9 @@
 
 				<tr th:each="l : ${lll}" >
 					<td th:text="${l.id}"></td>
-					<td th:text="${l.model}"></td>
+					<td>
+						<a th:href="@{/laptops/{id}(id=${l.id})}" th:text="${l.model}"></a>
+								</td>
 					<td th:text="${l.price}"></td>
 					<td th:text="${l.color}"></td>
                     <td>
