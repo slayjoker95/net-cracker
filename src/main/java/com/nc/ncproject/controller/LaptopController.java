@@ -1,27 +1,21 @@
 package com.nc.ncproject.controller;
 
 import com.nc.ncproject.model.Laptop;
-import com.nc.ncproject.repository.LaptopsRepository;
+import com.nc.ncproject.service.LaptopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/laptops")
 public class LaptopController {
-    /*
     @Autowired
     private LaptopService laptopService;
-*/
-    @Autowired
-    private LaptopsRepository laptopsRepository;
 
-    @GetMapping(path="/")
-    public @ResponseBody Iterable<Laptop> getAllLaptops() {
-        // This returns a JSON or XML with the users
-        return laptopsRepository.findAll();
-    }
-/*
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getAllLaptops() {
         ModelAndView modelAndView = new ModelAndView("laptops");
@@ -83,6 +77,5 @@ public class LaptopController {
         laptopService.update(updateLaptop);
         return "redirect:/laptops/";
     }
-    */
 
 }
