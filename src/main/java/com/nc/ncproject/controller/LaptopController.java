@@ -26,7 +26,7 @@ public class LaptopController {
         modelAndView.addObject("laptopForSearch", laptopForSearch);
         return modelAndView;
     }
-
+/*
     private ModelAndView createMV(Laptop laptop){
         ModelAndView modelAndView;
         if (laptop == null)
@@ -77,5 +77,5 @@ public class LaptopController {
         laptopService.update(updateLaptop);
         return "redirect:/laptops/";
     }
-
+*/
 }
