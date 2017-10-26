@@ -1,9 +1,19 @@
 package com.nc.ncproject.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="laptops")
 public class Laptop {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name="model")
     private String model;
+    @Column(name="price")
     private Long price;
+    @Column(name="color")
     private String color;
 
     public String getModel() {
@@ -30,9 +40,9 @@ public class Laptop {
         this.color = color;
     }
 
-    public Laptop(Long id, String model, Long price, String color) {
+    public Laptop(String model, Long price, String color) {
 
-        this.id = id;
+
         this.model = model;
         this.price = price;
         this.color = color;
