@@ -11,7 +11,6 @@
 </div>
 <div>
     <form action="#" th:action="@{/laptops/new}" th:object="${laptop}" method="post">
-        <p><label class="labels">ID:</label><input type="text" th:field="*{id}"/></p>
         <p><label class="labels">Model:</label><input type="text" th:field="*{model}"/></p>
         <p><label class="labels">Price:</label><input type="text" th:field="*{price}"/></p>
         <p><label class="labels">Color:</label><input type="text" th:field="*{color}"/></p>

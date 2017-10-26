@@ -26,7 +26,7 @@ public class LaptopController {
         modelAndView.addObject("laptopForSearch", laptopForSearch);
         return modelAndView;
     }
-/*
+
     private ModelAndView createMV(Laptop laptop){
         ModelAndView modelAndView;
         if (laptop == null)
@@ -41,7 +41,7 @@ public class LaptopController {
     public ModelAndView searchByObject(@ModelAttribute Laptop laptopForSearch, Model model) {
         return createMV(laptopService.getByID(laptopForSearch.getId().toString()));
     }    
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView searchById(@PathVariable String id) {
         return createMV(laptopService.getByID(id));
@@ -56,7 +56,7 @@ public class LaptopController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String createNew(Laptop newLaptop) {
-        laptopService.findAll().add(newLaptop);
+        laptopService.add(newLaptop);
         return "redirect:/laptops/";
     }
 
@@ -77,5 +77,4 @@ public class LaptopController {
         laptopService.update(updateLaptop);
         return "redirect:/laptops/";
     }
-*/
 }
